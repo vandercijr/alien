@@ -1,0 +1,48 @@
+{
+  "name": "alien",
+  "version": "0.1.0",
+  "description": "Derivative Greeks Calculation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandercijr/alien.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "tdd",
+    "mocha",
+    "chai",
+    "npm",
+    "nodejs",
+    "sequelize",
+    "express",
+    "derivatives"
+  ],
+  "author": "Vanderci Curvelo Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vandercijr/alien/issues"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "express": "^4.17.1",
+    "minimist": ">=1.2.2",
+    "mocha": "^7.1.1",
+    "pug": "^2.0.4",
+    "sequelize": "^5.21.7",
+    "vue": "^2.6.11"
+  },
+  "homepage": "https://github.com/vandercijr/alien#readme",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "sequelize-mock": "^0.10.2",
+    "sequelize-test-helpers": "^1.2.2"
+  }
+}

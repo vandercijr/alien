@@ -1,0 +1,7 @@
+{
+  "database" : "finance",
+  "user"     : "root",
+  "password" : "Pxpo685687@",
+  "host"     : "127.0.0.1",
+  "driver"   : "mysql"
+}
