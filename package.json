@@ -41,6 +41,8 @@
   },
   "homepage": "https://github.com/vandercijr/alien#readme",
   "dependencies": {
+    "blacknscholes": "git://github.com/vandercijr/blacknscholes.git",
+    "chai-http": "^4.3.0",
     "mysql2": "^2.1.0",
     "sequelize-mock": "^0.10.2",
     "sequelize-test-helpers": "^1.2.2"
