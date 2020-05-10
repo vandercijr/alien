@@ -10,27 +10,28 @@
 'use strict';
 
 const Chai      = require('chai');
+const chaiHttp  = require('chai-http');
 const assert    = Chai.assert;
-const DBConfig  = require('../configs/dbconfig.js');
-const DB        = require('../connection/db.js');
+const should    = Chai.should();
+const app       = require('../../server.js');
 
-describe('Test database connection', () => {
-  it('Should open connection config file', () => {
-    const dbconfig = DBConfig.load();
+Chai.use(chaiHttp);
 
-    assert.isObject(dbconfig, 'is a json object');
-  });
+describe('Test derivative route', () => {
+  it('Should get an derivative information as an object', (done) => {
+    const derivative_symbol = 'GGBRE10';
 
-  it('Should connect database', () => {
-    const db = DB.connect();
+    Chai.request(app)
+    .get('/derivative/'+derivative_symbol)
+    .end((err, res) => {
+      if (err) done(err);
+      // console.log()
+      res.should.have.status(200);
 
-    db
-    .authenticate()
-    .then(() => {
-      console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-      console.error('Unable to connect to the database:', err);
+      // Chai.expect(res).have.status(200);
+      res.body.should.be.a('object');
+
+      done();
     });
   });
 });
