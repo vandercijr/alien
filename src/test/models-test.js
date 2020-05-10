@@ -10,7 +10,7 @@
 'use strict';
 
 const { expect }       = require('chai');
-const SequelizeMock = require('sequelize-mock');
+const SequelizeMock    = require('sequelize-mock');
 const dbMock = new SequelizeMock();
 
 describe('Test Derivatives model', () => {
@@ -26,13 +26,14 @@ describe('Test Derivatives model', () => {
   });
 
   context('Find an existent Derivative', () => {
-    it('called Derivative.findOne', () => {
+    it('called Derivative.findOne', (done) => {
       DerivativeMock.findOne({
         where : { option_code : 'GGBRE11' }
       })
       .then((derivative) => {
         console.log(derivative);
       });
+      done();
     });
   });
 });
