@@ -1,10 +1,10 @@
-const Sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const DBConfig  = require('../configs/dbconfig.js');
 
-function connect() {
-  const dbconfig = DBConfig.load();
+const dbconfig = DBConfig.load();
 
-  return new Sequelize(
+module.exports =  {
+  db : new Sequelize(
     dbconfig.database,
     dbconfig.user,
     dbconfig.password,
@@ -12,9 +12,6 @@ function connect() {
       'host'    : dbconfig.host,
       'dialect' : dbconfig.driver
     }
-  );
-}
-
-module.exports = {
-  connect : connect
+  ),
+  DataTypes : DataTypes
 }
