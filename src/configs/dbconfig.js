@@ -3,7 +3,7 @@
 function load() {
   const fs = require('fs')
 
-  let rawconfig = fs.readFileSync('./configs/dbconfig.json');
+  let rawconfig = fs.readFileSync(__dirname + '/dbconfig.json');
 
   return JSON.parse(rawconfig);
 }
