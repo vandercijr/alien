@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Derivative = sequelize.define('derivative', {
+  return sequelize.define('derivative', {
     id          : {
       type : DataTypes.INTEGER.UNSIGNED,
       primaryKey : true,
@@ -52,6 +52,4 @@ module.exports = (sequelize, DataTypes) => {
       allowNull : true,
     }
   });
-
-  return Derivative;
 }
