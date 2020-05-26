@@ -25,9 +25,51 @@ describe('Test Derivatives model', () => {
     serie           : ''
   });
 
+  const StockNegotiationMock = dbMock.define('stock_negotiations', {
+    id          : 1,
+    TIPREG  : 
+    DATAPREG  :
+    CODBDI  :
+    CODNEG  :
+    TIPMERC :
+    NOMERES :
+    ESPEC :
+    PRAZOT  :
+    MODREF  :
+    OPENPRICE :
+    MAXPRICE  :
+    MINPRICE  :
+    MIDPRICE  :
+    CLOSEPRICE  :
+    OFCPRICE  :
+    OFVPRICE  :
+    TOTNEG  :
+    QUATOT  :
+    TOTVOLUME :
+    EXEPRICE  :
+    INDOPC  :
+    DATAVENC  :
+    FATCOT  :
+    PTOEXE  :
+    CODISI  :
+    DISMES  :
+  });
+
   context('Find an existent Derivative', () => {
     it('called Derivative.findOne', (done) => {
       DerivativeMock.findOne({
+        where : { option_code : 'GGBRE11' }
+      })
+      .then((derivative) => {
+        console.log(derivative);
+      });
+      done();
+    });
+  });
+
+  context('Find last Stock Negotiatione', () => {
+    it('called Derivative.findOne', (done) => {
+      StockMock.findOne({
         where : { option_code : 'GGBRE11' }
       })
       .then((derivative) => {
