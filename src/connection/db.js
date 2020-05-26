@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes, QueryTypes } = require('sequelize');
 const DBConfig  = require('../configs/dbconfig.js');
 
 const dbconfig = DBConfig.load();
@@ -13,5 +13,6 @@ module.exports =  {
       'dialect' : dbconfig.driver
     }
   ),
-  DataTypes : DataTypes
+  DataTypes : DataTypes,
+  QueryTypes: QueryTypes
 }
